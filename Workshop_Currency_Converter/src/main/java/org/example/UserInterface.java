@@ -7,8 +7,10 @@ public class UserInterface {
 
     public static void startApp() {
         printMenu();
-        System.out.println(exchangeOption());
-        System.out.println(amountToExchange());
+        //System.out.println(exchangeOption());
+        //System.out.println(amountToExchange());
+        Calculation calculation = new Calculation();
+        System.out.println(calculation.calculate(exchangeOption(),amountToExchange()));
     }
 
     public static void printMenu() {
