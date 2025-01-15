@@ -1,16 +1,16 @@
 package org.example;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class UserInterface {
 
     public static void startApp() {
         printMenu();
-        //System.out.println(exchangeOption());
-        //System.out.println(amountToExchange());
         Calculation calculation = new Calculation();
-        System.out.println(calculation.calculate(exchangeOption(),amountToExchange()));
+        System.out.println(calculation.calculate(exchangeOption(),amountToExchange()) + " at " + dateTime());
     }
 
     public static void printMenu() {
@@ -31,5 +31,11 @@ public class UserInterface {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter amount: ");
         return sc.nextBigDecimal();
+    }
+
+    public static String dateTime () {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd - HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        return localDateTime.format(dateTimeFormatter);
     }
 }
