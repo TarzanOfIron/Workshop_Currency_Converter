@@ -33,6 +33,8 @@ public class UserInterface {
             if (userInput < 0 || userInput > 5) {
                 System.out.print("Not an option, please enter a menu point");
                 continue;
+            } else if (userInput == 0) {
+                System.exit(0);
             }
             break;
         }

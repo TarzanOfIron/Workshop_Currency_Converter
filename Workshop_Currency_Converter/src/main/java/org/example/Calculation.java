@@ -9,10 +9,10 @@ public class Calculation {
 
     public  BigDecimal calculate(int option, BigDecimal amount) {
         return switch (option) {
-            case 1 -> exchangeRateSEKtoUSD.multiply(amount);
-            case 2 -> exchangeRateSEKtoUSD.divide(amount);
-            case 3 -> exchangeRateSEKtoEUR.multiply(amount);
-            case 4 -> exchangeRateSEKtoEUR.divide(amount);
+            case 1 -> amount.multiply(exchangeRateSEKtoUSD);
+            case 2 -> amount.divide(exchangeRateSEKtoUSD);
+            case 3 -> amount.multiply(exchangeRateSEKtoEUR);
+            case 4 -> amount.divide(exchangeRateSEKtoEUR);
             default -> throw new IllegalArgumentException("Invalid option");
         };
     }
